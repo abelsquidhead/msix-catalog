@@ -45,7 +45,7 @@ namespace msix.catalog.tests.Behaviors
                 .SetAmPm("PM")
                 .SetAlarmName("Good morning!!!")
                 .ClickSaveAlarm()
-                .GetAlarm("Good morning!!!");
+                .GetAlarm("Good morning!!!, ‎10‎:‎00‎ ‎PM, Only once, On");
 
             Assert.IsTrue(goodMorningAlarm.IsToggleOn(), "alarm toggle should be selected");
 
