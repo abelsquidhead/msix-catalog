@@ -61,11 +61,11 @@ namespace msix.catalog.tests.Behaviors
 
         //}
 
-        [TestMethod]
-        public void TestMethod2()
-        {
-            System.Console.WriteLine("Ok");
-        }
+        //[TestMethod]
+        //public void TestMethod2()
+        //{
+        //    System.Console.WriteLine("Ok");
+        //}
 
     }
 }
