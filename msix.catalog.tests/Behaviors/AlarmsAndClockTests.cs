@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using msix.catalog.tests.Screens.Alarms;
+using msix.catalog.tests.Screens.MSIXCatalog;
 
 namespace msix.catalog.tests.Behaviors
 {
@@ -9,11 +10,13 @@ namespace msix.catalog.tests.Behaviors
     public class AlarmsAndClockTests
     {
         private static TestContext _context;
+        private static string _buildSourceDirectory;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
             _context = context;
+            _buildSourceDirectory = _context.Properties["BuildSourceDirectory"].ToString();
 
             // start appium windows app driver
             Process.Start(@"C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe");
@@ -31,6 +34,12 @@ namespace msix.catalog.tests.Behaviors
             }
         }
 
+        [TestMethod]
+        public void LaunchMsixCatalogAppTest()
+        {
+            var msixCatalog = new MsixCatalogApp();
+            msixCatalog.LaunchApp(_buildSourceDirectory);
+        }
 
         [TestMethod]
         public void AddAlarmMakeSureEnabledTest()
