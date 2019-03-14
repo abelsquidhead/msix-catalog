@@ -38,7 +38,8 @@ namespace msix.catalog.tests.Behaviors
         public void LaunchMsixCatalogAppTest()
         {
             var msixCatalog = new MsixCatalogApp();
-            msixCatalog.LaunchApp(_buildSourceDirectory);
+            msixCatalog.LaunchApp(_buildSourceDirectory)
+                .KillApp();
         }
 
         //[TestMethod]

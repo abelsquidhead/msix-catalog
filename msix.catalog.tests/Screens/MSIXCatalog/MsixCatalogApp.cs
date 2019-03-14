@@ -16,6 +16,8 @@ namespace msix.catalog.tests.Screens.MSIXCatalog
         public MsixCatalogApp LaunchApp(string sourcePath)
         {
             var msixCatalogAppPath = sourcePath + @"\msix.catalog.package.net\bin\x86\Release\msix.catalog.app.net\msix.catalog.app.exe";
+
+            //var msixCatalogAppPath = @"C:\Users\abel\Source\github\AbelSquidHead\msix-catalog\msix.catalog.package.net\bin\AnyCPU\Debug\msix.catalog.app.net\msix.catalog.app.exe";
             
             // launch windows store app
             var appCapabilities = new DesiredCapabilities();
@@ -23,6 +25,17 @@ namespace msix.catalog.tests.Screens.MSIXCatalog
             _msixCatalogApp = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), appCapabilities);
 
             return this;
+        }
+
+        public MsixCatalogApp KillApp()
+        {
+            var buttonList = _msixCatalogApp.FindElementsByClassName("Button");
+
+            var closeButton = buttonList[4];
+            closeButton.Click();
+
+            return this;
+
         }
     }
 }
