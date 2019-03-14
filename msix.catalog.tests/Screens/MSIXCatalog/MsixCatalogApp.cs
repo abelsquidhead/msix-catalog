@@ -27,6 +27,7 @@ namespace msix.catalog.tests.Screens.MSIXCatalog
             return this;
         }
 
+        
         public MsixCatalogApp KillApp()
         {
             var buttonList = _msixCatalogApp.FindElementsByClassName("Button");
@@ -37,5 +38,25 @@ namespace msix.catalog.tests.Screens.MSIXCatalog
             return this;
 
         }
+
+        public AboutScreen ClickAbout()
+        {
+            var listBoxItemList = _msixCatalogApp.FindElementsByClassName("ListBoxItem");
+            var about = listBoxItemList[6];
+            about.Click();
+
+            return new AboutScreen(_msixCatalogApp);
+        }
+
+        public void SetTopLevelWindow(WindowsDriver<WindowsElement> driver)
+        {
+            _msixCatalogApp = driver;
+        }
+
+        public WindowsDriver<WindowsElement> GetTopLevelWindow()
+        {
+            return _msixCatalogApp;
+        }
+
     }
 }

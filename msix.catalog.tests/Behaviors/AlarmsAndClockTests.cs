@@ -35,11 +35,14 @@ namespace msix.catalog.tests.Behaviors
         }
 
         [TestMethod]
-        public void LaunchMsixCatalogAppTest()
+        public void LaunchMsixCatalogAppClickAboutTest()
         {
             var msixCatalog = new MsixCatalogApp();
             msixCatalog.LaunchApp(_buildSourceDirectory)
+                .ClickAbout()
+                .AssertTitle("MSIX Catalog")
                 .KillApp();
+
         }
 
         //[TestMethod]

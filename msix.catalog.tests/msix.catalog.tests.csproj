@@ -71,6 +71,7 @@
     <Compile Include="Screens\Alarms\AlarmScreen.cs" />
     <Compile Include="Screens\Alarms\EditAlarmScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\MSIXCatalog\AboutScreen.cs" />
     <Compile Include="Screens\MSIXCatalog\MsixCatalogApp.cs" />
   </ItemGroup>
   <ItemGroup>
