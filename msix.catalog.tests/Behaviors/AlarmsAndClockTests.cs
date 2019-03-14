@@ -41,25 +41,25 @@ namespace msix.catalog.tests.Behaviors
             msixCatalog.LaunchApp(_buildSourceDirectory);
         }
 
-        [TestMethod]
-        public void AddAlarmMakeSureEnabledTest()
-        {
-            var alarmsAndClock = new AlarmsAndClock();
+        //[TestMethod]
+        //public void AddAlarmMakeSureEnabledTest()
+        //{
+        //    var alarmsAndClock = new AlarmsAndClock();
 
-            var goodMorningAlarm = alarmsAndClock.LaunchApp()
-                .ClickAlarmMenuItem()
-                .AddNewAlarm()
-                .SetHour(10)
-                .SetMinute("00")
-                .SetAmPm("PM")
-                .SetAlarmName("Good morning!!!")
-                .ClickSaveAlarm()
-                .GetAlarm("Good morning!!!, ‎10‎:‎00‎ ‎PM, Only once, On");
+        //    var goodMorningAlarm = alarmsAndClock.LaunchApp()
+        //        .ClickAlarmMenuItem()
+        //        .AddNewAlarm()
+        //        .SetHour(10)
+        //        .SetMinute("00")
+        //        .SetAmPm("PM")
+        //        .SetAlarmName("Good morning!!!")
+        //        .ClickSaveAlarm()
+        //        .GetAlarm("Good morning!!!, ‎10‎:‎00‎ ‎PM, Only once, On");
 
-            Assert.IsTrue(goodMorningAlarm.IsToggleOn(), "alarm toggle should be selected");
+        //    Assert.IsTrue(goodMorningAlarm.IsToggleOn(), "alarm toggle should be selected");
 
 
-        }
+        //}
 
         [TestMethod]
         public void TestMethod2()
